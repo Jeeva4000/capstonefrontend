@@ -11,7 +11,7 @@ const Dashboard = () => {
 
   useEffect(() => {
     if (!localStorage.getItem("token")) {
-      navigate("/", { replace: true });
+      navigate("/login", { replace: true });
     }
     let token = localStorage.getItem("token");
     const fetchAllData = async () => {
