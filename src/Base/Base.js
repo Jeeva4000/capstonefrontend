@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router-dom'
 
 function Base({ title, description, children }) {
     //const history = useHistory() v5
-    function handleLogout(){
+    function handleLogout() {
         // localStorage.setItem(key, value);
         // localStorage.setItem('userToken', 'xyz12345');
         localStorage.setItem('userToken', '');
@@ -17,7 +17,7 @@ function Base({ title, description, children }) {
             <header>
                 <nav>
                     <AppBar position="static">
-                        <Toolbar variant="dense">
+                        <Toolbar variant="dense" >
                             <Typography sx={{ mr: 2 }}>
                                 CARS
                             </Typography>
@@ -70,7 +70,7 @@ function Base({ title, description, children }) {
                                 edge="end"
                                 color="inherit"
                                 aria-label="add cars"
-                               onClick={handleLogout}
+                                onClick={handleLogout}
                                 sx={{ mr: 2 }}>
                                 logout
                             </IconButton>

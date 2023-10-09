@@ -2,17 +2,107 @@
   text-align: center;
 }
 
+/* .car-details {
+  background-color: #fff;
+  padding: 20px;
+  max-width: 400px;
+  margin: 0 auto;
+  text-align: center;
+  border-radius: 4px;
+  margin-top: 30px;
+} */
+.car-details {
+  background-color: #fff;
+  padding: 20px;
+  width: 500px;
+  font-family: 'Times New Roman', Times, serif;
+  margin: 0 auto;
+  text-align: center;
+  border-radius: 4px;
+  margin-top: 50px;
+  font-size: xx-large;
+  text-align: center;
+}
 
+.car-details h5,
+.car-details p {
+  font-size: 0.4em;
+}
+
+.car-details-image {
+  max-width: 80%;
+  /* height: auto; */
+  margin-top: 10px;
+}
+
+.car-details-close-button {
+  margin-top: 20px;
+}
+
+/* CSS code for styling the Base component */
+body {
+  font-family: Arial, sans-serif;
+}
+
+/* Header styles */
+.main-container header {
+  background-color: #2196F3;
+  color: #fff;
+  padding: 10px 0;
+
+}
+
+/* AppBar styles */
+.main-container .MuiAppBar-root {
+  background-color: #2196F3;
+
+}
+
+/* Toolbar styles */
+.main-container .MuiToolbar-root {
+  justify-content: space-between;
+}
+
+/* IconButton styles */
+.main-container .MuiIconButton-root {
+  color: #fff;
+}
+
+/* Main content styles */
+.main-container main {
+  padding: 20px;
+}
+
+/* Title styles */
+.main-container h1 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+/* Description styles */
+.main-container h4 {
+  font-size: 16px;
+  color: #666;
+  margin-bottom: 20px;
+}
+
+/* Contents styles */
+.main-container .contents {
+  background-color: #f9f9f9;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+}
 
 
 /* Dashboard.css */
 
-.container {
+/* .container {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-gap: 20px;
   padding: 20px;
-  background-color: #f0f0f0; 
+  background-color: #bca7a7;
 }
 
 .paper {
@@ -20,8 +110,9 @@
   border-radius: 8px;
   box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.1);
   transition: transform 0.2s ease-in-out;
-  background-color: #ffffff; 
- 
+  background-color: #ffffff;
+  border: 3px solid blueviolet;
+
 }
 
 .paper:hover {
@@ -31,10 +122,10 @@
 .img-container {
   display: flex;
   justify-content: center;
-  align-items: center; 
+  align-items: center;
   margin-bottom: 10px;
-  height: 200px; 
-  overflow: hidden; 
+  height: 200px;
+  overflow: hidden;
 }
 
 .img-container img {
@@ -42,12 +133,6 @@
   height: 100%;
   object-fit: cover;
 }
-
-/* .details {
-  text-align:center;
-  margin-top: 10px; 
-} */
-/* style.css */
 
 
 
@@ -58,14 +143,14 @@
   background-color: #f0f0f0;
   border: 1px solid #ccc;
   padding: 10px;
-  width: 300px; 
-  margin: 0 auto; 
+  width: 300px;
+  margin: 0 auto;
   font-family: 'Times New Roman', Times, serif;
- font-size: large;
+  font-size: large;
 }
 
 .details p {
-  margin: 5px 0; 
+  margin: 5px 0;
 }
 
 
@@ -73,7 +158,74 @@
 .error-message {
   color: red;
   font-size: 16px;
+} */
+
+/* Dashboard.css */
+.container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 20px;
+  padding: 20px;
+  background-color: #bca7a7;
+
+
 }
+
+.paper {
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease-in-out;
+  background-color: #ffffff;
+  border: 3px solid blueviolet;
+
+}
+
+.paper:hover {
+  transform: translateY(-5px);
+}
+
+.img-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 10px;
+  /* height: 400px; */
+  overflow: hidden;
+
+}
+
+.img-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.details {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #f0f0f0;
+  border: 1px solid #ccc;
+  padding: 10px;
+  width: 300px;
+  margin: 0 auto;
+  font-family: 'Times New Roman', Times, serif;
+  font-size: large;
+}
+
+
+
+.details p {
+  margin: 5px 0;
+}
+
+.error-message {
+  color: red;
+  font-size: 16px;
+}
+
+
 
 /* LoginPage.css */
 
@@ -91,7 +243,7 @@
   height: 350px;
   width: 500px;
   padding: 20px;
- justify-content: space-evenly;
+  justify-content: space-evenly;
   border-radius: 8px;
   box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.1);
   background-color: #ffffff;
@@ -116,6 +268,7 @@
   margin-top: 10px;
   color: red;
 }
+
 /* AddCars.css */
 
 .box-part {
@@ -157,6 +310,7 @@
   margin-top: 10px;
   color: green;
 }
+
 /* SignupPage.css */
 
 .main {
@@ -164,7 +318,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 80vh; 
+  height: 80vh;
   background-color: #f5f5f5;
 }
 
@@ -207,4 +361,3 @@
   margin-top: 10px;
   color: red;
 }
-

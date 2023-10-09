@@ -198,3 +198,433 @@ export default App;
         ""
       )}
     </Base>
+
+
+    // import React, { useEffect, useState } from "react";
+// import Base from "../Base/Base";
+// import { useNavigate } from "react-router-dom";
+// import { Paper, Typography } from "@mui/material";
+// import CarsDetails from "./CarDetails";
+// // import CarsDetails from "./CarDetails";
+
+// const Dashboard = () => {
+//   const [cars, setCars] = useState([]);
+//   const [error, setError] = useState("");
+//   // const [loading, setLoading] = useState("");
+//   // const [selectedCar, setSelectedCar] = useState(null);
+//   const navigate = useNavigate();
+
+//   useEffect(() => {
+//     if (!localStorage.getItem("token")) {
+//       navigate("/login", { replace: true });
+//     }
+//     let token = localStorage.getItem("token");
+//     const fetchAllData = async () => {
+//       const res = await fetch(`https://capstonebackend-47kj.onrender.com/cars/all`, {
+//         method: "GET",
+//         headers: {
+//           "x-auth-token": token
+//         },
+//       });
+//       const data = await res.json();
+
+
+//       if (!data.data) {
+//         setError(data.message);
+//       }
+//       setCars(data.data)
+//       // console.log(cars)
+//     };
+//     fetchAllData();
+//   }, [cars, navigate]);
+
+//   return (
+//     <Base>
+//       {cars && (
+//         <div className="container"> {/* Add a class to the container */}
+//           {cars?.map((data, index) => (
+//             <Paper elevation={6} key={data._id} className="paper"> {/* Add a class to the paper */}
+//               <div className="img-container"> {/* Add a class to the image container */}
+//                 <img src={data.data.image} alt={data.image} />
+//               </div>
+//               {/* <div className="details">
+//                 <p>Make  : {data.data.make}</p>
+//                 <p>Model  : {data.data.model}</p>
+//                 <p>Price  : {data.data.price}</p>
+//                 <p>Color  : {data.data.color}</p>
+//                 <p>FuelType  :{data.data.fuelType}</p>
+//                 <p>Mileage  : {data.data.mileage}</p>
+//                 <p>Transmission  : {data.data.transmission}</p>
+//                 <p>Engine  : {data.data.engine}</p>
+//                 <p>Horsepower  : {data.data.horsepower}</p>
+//                 <p>Torque  : {data.data.torque}</p>
+//                 <p>Drivetrain  : {data.data.drivetrain}</p>
+
+//               </div> */}
+//               {/* <CarsDetails cars={data.data} /> */}
+//             </Paper>
+//           ))}
+//         </div>
+//       )}
+//       {error ? <Typography color="error">{error}</Typography> : ""}
+//     </Base>
+//   );
+// };
+
+// export default Dashboard;
+// // import React, { useEffect, useState } from "react";
+// // import Base from "../Base/Base";
+// // import { useNavigate } from "react-router-dom";
+// // import { Paper, Typography, Button } from "@mui/material"; // Import Button component
+// // import CarsDetails from "./CarDetails";
+
+// // const Dashboard = () => {
+// //   const [cars, setCars] = useState([]);
+// //   const [error, setError] = useState("");
+// //   const [selectedCar, setSelectedCar] = useState(null);
+// //   const navigate = useNavigate();
+
+// //   useEffect(() => {
+// //     if (!localStorage.getItem("token")) {
+// //       navigate("/login", { replace: true });
+// //     }
+// //     let token = localStorage.getItem("token");
+// //     const fetchAllData = async () => {
+// //       const res = await fetch(`https://capstonebackend-47kj.onrender.com/cars/all`, {
+// //         method: "GET",
+// //         headers: {
+// //           "x-auth-token": token
+// //         },
+// //       });
+// //       const data = await res.json();
+
+// //       if (!data.data) {
+// //         setError(data.message);
+// //       }
+// //       setCars(data.data)
+// //     };
+// //     fetchAllData();
+// //   }, [navigate]);
+
+// //   const handleViewDetails = (car) => {
+// //     setSelectedCar(car);
+// //   };
+
+// //   return (
+// //     <Base>
+// //       {cars && (
+// //         <div className="container">
+// //           {cars?.map((data, index) => (
+// //             <Paper elevation={6} key={data._id} className="paper">
+// //               <div className="img-container">
+// //                 <img src={data.data.image} alt={data.image} />
+// //               </div>
+// //               <div className="details">
+// //                 {/* <p>Make  : {data.data.make}</p>
+// //                 <p>Model  : {data.data.model}</p>
+// //                 <p>Price  : {data.data.price}</p>
+// //                 <p>Color  : {data.data.color}</p>
+// //                 <p>FuelType  :{data.data.fuelType}</p>
+// //                 <p>Mileage  : {data.data.mileage}</p>
+// //                 <p>Transmission  : {data.data.transmission}</p>
+// //                 <p>Engine  : {data.data.engine}</p>
+// //                 <p>Horsepower  : {data.data.horsepower}</p>
+// //                 <p>Torque  : {data.data.torque}</p>
+// //                 <p>Drivetrain  : {data.data.drivetrain}</p> */}
+// //                 <Button onClick={() => handleViewDetails(data)}>View Details</Button>
+// //               </div>
+// //             </Paper>
+// //           ))}
+// //         </div>
+// //       )}
+// //       {error ? <Typography color="error">{error}</Typography> : ""}
+// //       {selectedCar && <CarsDetails cars={selectedCar} onClose={() => setSelectedCar(null)} />}
+// //     </Base>
+// //   );
+// // };
+
+// // export default Dashboard;
+
+// // import React, { useEffect, useState } from "react";
+// // import Base from "../Base/Base";
+// // import { useNavigate } from "react-router-dom";
+// // import { Paper, Typography } from "@mui/material";
+
+
+// // const Dashboard = () => {
+// //   const [cars, setCars] = useState([]);
+// //   const [error, setError] = useState("");
+// //   const [selectedCar, setSelectedCar] = useState(null);
+// //   const navigate = useNavigate();
+
+// //   useEffect(() => {
+// //     if (!localStorage.getItem("token")) {
+// //       navigate("/login", { replace: true });
+// //     }
+// //     let token = localStorage.getItem("token");
+// //     const fetchAllData = async () => {
+// //       const res = await fetch(`https://capstonebackend-47kj.onrender.com/cars/all`, {
+// //         method: "GET",
+// //         headers: {
+// //           "x-auth-token": token
+// //         },
+// //       });
+// //       const data = await res.json();
+
+// //       if (!data.data) {
+// //         setError(data.message);
+// //       }
+// //       setCars(data.data);
+// //     };
+// //     fetchAllData();
+// //   }, [cars, navigate]);
+
+// //   // Function to toggle showing details for a specific car
+// //   const toggleDetails = (car) => {
+// //     setSelectedCar((prevSelectedCar) =>
+// //       prevSelectedCar === car ? null : car
+// //     );
+// //   };
+
+// //   return (
+// //     <Base>
+// //       {cars && (
+// //         <div className="container">
+// //           {cars?.map((data, index) => (
+// //             <Paper elevation={6} key={data._id} className="paper">
+// //               <div
+// //                 className={`img-container ${selectedCar === data ? "expanded" : ""}`}
+// //                 onClick={() => toggleDetails(data)}
+// //               >
+// //                 <img src={data.data.image} alt={data.image} />
+// //               </div>
+// //               <div className="details">
+// //                 <p>Make: {data.data.make}</p>
+// //                 <p>Model: {data.data.model}</p>
+// //                 <p>Price: {data.data.price}</p>
+// //                 <p>Color: {data.data.color}</p>
+// //                 <p>FuelType: {data.data.fuelType}</p>
+// //                 <p>Mileage: {data.data.mileage}</p>
+// //                 <p>Transmission: {data.data.transmission}</p>
+// //                 <p>Engine: {data.data.engine}</p>
+// //                 <p>Horsepower: {data.data.horsepower}</p>
+// //                 <p>Torque: {data.data.torque}</p>
+// //                 <p>Drivetrain: {data.data.drivetrain}</p>
+// //               </div>
+// //             </Paper>
+// //           ))}
+// //         </div>
+// //       )}
+// //       {error ? <Typography color="error">{error}</Typography> : ""}
+// //     </Base>
+// //   );
+// // };
+
+// // export default Dashboard;
+
+// import React, { useEffect, useState } from "react";
+// import Base from "../Base/Base";
+// import { useNavigate } from "react-router-dom";
+// import { Paper, Typography, Modal, Button } from "@mui/material";
+
+// const Dashboard = () => {
+//   const [cars, setCars] = useState([]);
+//   const [error, setError] = useState("");
+//   const [selectedCar, setSelectedCar] = useState(null); // Selected car for modal
+//   const [isModalOpen, setIsModalOpen] = useState(false); // Modal open state
+//   const navigate = useNavigate();
+
+//   useEffect(() => {
+//     if (!localStorage.getItem("token")) {
+//       navigate("/login", { replace: true });
+//     }
+//     let token = localStorage.getItem("token");
+//     const fetchAllData = async () => {
+//       const res = await fetch(`https://capstonebackend-47kj.onrender.com/cars/all`, {
+//         method: "GET",
+//         headers: {
+//           "x-auth-token": token
+//         },
+//       });
+//       const data = await res.json();
+
+//       if (!data.data) {
+//         setError(data.message);
+//       }
+//       setCars(data.data)
+//     };
+//     fetchAllData();
+//   }, [navigate]);
+
+//   // Function to handle opening the modal when an image is clicked
+//   const handleOpenModal = (car) => {
+//     setSelectedCar(car);
+//     setIsModalOpen(true);
+//   };
+
+//   // Function to handle closing the modal
+//   const handleCloseModal = () => {
+//     setSelectedCar(null);
+//     setIsModalOpen(false);
+//   };
+
+//   return (
+//     <Base>
+//       {cars && (
+//         <div className="container">
+//           {cars?.map((data, index) => (
+//             <Paper elevation={6} key={data._id} className="paper">
+//               <div
+//                 className="img-container"
+//                 onClick={() => handleOpenModal(data)} // Open modal on image click
+//               >
+//                 <img src={data.data.image} alt={data.image} />
+//               </div>
+//               {/* Rest of the car details */}
+//               {/* <div className="details">
+//                 <p>Make  : {data.data.make}</p>
+//                 <p>Model  : {data.data.model}</p>
+//                 <p>Price  : {data.data.price}</p>
+//                 <p>Color  : {data.data.color}</p>
+//                 <p>FuelType  :{data.data.fuelType}</p>
+//                 <p>Mileage  : {data.data.mileage}</p>
+//                 <p>Transmission  : {data.data.transmission}</p>
+//                 <p>Engine  : {data.data.engine}</p>
+//                 <p>Horsepower  : {data.data.horsepower}</p>
+//                 <p>Torque  : {data.data.torque}</p>
+//                 <p>Drivetrain  : {data.data.drivetrain}</p>
+//               </div> */}
+//             </Paper>
+//           ))}
+//         </div>
+//       )}
+//       {error ? <Typography color="error">{error}</Typography> : ""}
+
+//       {/* Modal for displaying car details */}
+//       <div className="car-details"> {/* Update the class name to "car-details" */}
+//         <Button onClick={handleOpen}>View Details</Button>
+//         <Modal
+//           open={open}
+//           onClose={handleClose}
+//           aria-labelledby="cars-details-modal"
+//           aria-describedby="cars-details"
+//         >
+//           <div className="car-details-content"> {/* Update the class name to "car-details-content" */}
+//             <Typography variant="h5" className="car-details-name"> {/* Update the class name to "car-details-name" */}
+//               {cars.data.make} {cars.data.model}
+//             </Typography>
+//             <img
+//               src={cars.data.image}
+//               alt={cars.data.make}
+//               className="car-details-image"
+//             />
+
+//             <Typography className="car-details-title"> {/* Update the class name to "car-details-title" */}
+//               Price: {cars.data.price}
+//             </Typography>
+//             <Typography className="car-details-description"> {/* Update the class name to "car-details-description" */}
+//               Color: {cars.data.color}
+//             </Typography>
+//             <Typography className="car-details-fuel-type"> {/* Update the class name to "car-details-fuel-type" */}
+//               Fuel Type: {cars.data.fuelType}
+//             </Typography>
+//             <Typography className="car-details-mileage"> {/* Update the class name to "car-details-mileage" */}
+//               Mileage: {cars.data.mileage}
+//             </Typography>
+//             <Typography className="car-details-transmission"> {/* Update the class name to "car-details-transmission" */}
+//               Transmission: {cars.data.Transmission}
+//             </Typography>
+//             <Typography className="car-details-engine"> {/* Update the class name to "car-details-engine" */}
+//               Engine: {cars.data.Engine}
+//             </Typography>
+//             <Typography className="car-details-horsepower"> {/* Update the class name to "car-details-horsepower" */}
+//               Horsepower: {cars.data.Horsepower}
+//             </Typography>
+//             <Typography className="car-details-torque"> {/* Update the class name to "car-details-torque" */}
+//               Torque : {cars.data.Torque}
+//             </Typography>
+//             <Typography className="car-details-drivetrain"> {/* Update the class name to "car-details-drivetrain" */}
+//               Drivetrain : {cars.data.Drivetrain}
+//             </Typography>
+//             <Button variant="contained" onClick={handleClose} className="car-details-close-button"> {/* Update the class name to "car-details-close-button" */}
+//               Close
+//             </Button>
+//           </div>
+//         </Modal>
+//       </div>
+//     </Base>
+//   );
+// };
+
+// export default Dashboard;
+
+// import React, { useState } from 'react';
+// import Modal from '@mui/material/Modal';
+// import { Button, Typography } from '@mui/material';
+
+// function CarsDetails({ cars }) { // Change 'recipe' to 'cars'
+//     const [open, setOpen] = useState(false);
+
+//     const handleOpen = () => {
+//         setOpen(true);
+//     };
+
+//     const handleClose = () => {
+//         setOpen(false);
+//     };
+
+//     return (
+//         <div className="modal">
+//             <Button onClick={handleOpen}>View Details</Button>
+//             <Modal
+//                 open={open}
+//                 onClose={handleClose}
+//                 aria-labelledby="cars-details-modal"
+//                 aria-describedby="cars-details"
+//             >
+//                 <div className="modal-content">
+//                     <Typography variant="h5" className="modal-name">
+//                         {cars.data.make} {cars.data.model} {/* Display car make and model */}
+//                     </Typography>
+//                     <img
+//                         src={cars.data.image}
+//                         alt={cars.data.make}
+//                         className="modal-image"
+//                     />
+
+//                     <Typography className="modal-title">
+//                         Price: {cars.data.price} {/* Display car price */}
+//                     </Typography>
+//                     <Typography className="modal-description">
+//                         Color: {cars.data.color} {/* Display car color */}
+//                     </Typography>
+//                     <Typography className="modal-ingredients">
+//                         Fuel Type: {cars.data.fuelType} {/* Display car fuel type */}
+//                     </Typography>
+//                     <Typography className="modal-instructions">
+//                         Mileage: {cars.data.mileage} {/* Display car mileage */}
+//                     </Typography>
+//                     <Typography className="modal-instructions">
+//                         Transmission: {cars.data.Transmission} {/* Display car mileage */}
+//                     </Typography>
+//                     <Typography className="modal-instructions">
+//                         Engine: {cars.data.Engine} {/* Display car mileage */}
+//                     </Typography>
+//                     <Typography className="modal-instructions">
+//                         Horsepower: {cars.data.Horsepower} {/* Display car mileage */}
+//                     </Typography>
+//                     <Typography className="modal-instructions">
+//                         Torque : {cars.data.Torque} {/* Display car mileage */}
+//                     </Typography>
+//                     <Typography className="modal-instructions">
+//                         Drivetrain : {cars.data.Drivetrain} {/* Display car mileage */}
+//                     </Typography>
+//                     {/* You can add more details as needed */}
+//                     <Button variant="contained" onClick={handleClose} className="modal-close-button">
+//                         Close
+//                     </Button>
+//                 </div>
+//             </Modal>
+//         </div>
+//     );
+// }
