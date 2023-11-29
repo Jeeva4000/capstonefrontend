@@ -4,13 +4,25 @@ import { useNavigate } from 'react-router-dom'
 
 function Base({ title, description, children }) {
     //const history = useHistory() v5
-    function handleLogout() {
-        // localStorage.setItem(key, value);
-        // localStorage.setItem('userToken', 'xyz12345');
-        localStorage.setItem('userToken', '');
-        navigate("/login")
-    }
+    // function handleLogout() {
+    //     // localStorage.setItem(key, value);
+    //     // localStorage.setItem('userToken', 'xyz12345');
+    //     localStorage.setItem('userToken', '');
+    //     navigate("/login")
+    // }
+    // const navigate = useNavigate()
     const navigate = useNavigate()
+    let tokenId = localStorage.getItem("token")
+    function handleAuthentication() {
+        if (tokenId) {
+
+            localStorage.removeItem("token");
+            navigate("/login");
+        } else {
+
+            navigate("/login");
+        }
+    }
 
     return (
         <div className='main-container'>
@@ -18,7 +30,7 @@ function Base({ title, description, children }) {
                 <nav>
                     <AppBar position="static">
                         <Toolbar variant="dense" >
-                            <Typography sx={{ mr: 2 }}>
+                            <Typography sx={{ mr: 2 }} style={{ alignItems: "flex-start" }}>
                                 CARS
                             </Typography>
                             <IconButton
@@ -38,14 +50,14 @@ function Base({ title, description, children }) {
                                 MyAccount
                             </IconButton>
 
-                            <IconButton
+                            {/* <IconButton
                                 edge="end"
                                 color="inherit"
                                 aria-label="add cars"
                                 onClick={() => navigate("/login")}
                                 sx={{ mr: 2 }}>
                                 Login
-                            </IconButton>
+                            </IconButton> */}
 
 
                             {/* <IconButton
@@ -57,23 +69,35 @@ function Base({ title, description, children }) {
                                 AddCars
                             </IconButton> */}
 
-                            <IconButton
+                            {/* <IconButton
                                 edge="end"
                                 color="inherit"
                                 aria-label="add cars"
                                 onClick={() => navigate("/signup")}
                                 sx={{ mr: 2 }}>
                                 Signup
-                            </IconButton>
+                            </IconButton> */}
 
-                            <IconButton
+                            {/* <IconButton
                                 edge="end"
                                 color="inherit"
                                 aria-label="add cars"
                                 onClick={handleLogout}
                                 sx={{ mr: 2 }}>
                                 logout
+                            </IconButton> */}
+
+
+                            <IconButton
+                                edge="end"
+                                color="inherit"
+                                aria-label={tokenId ? "logout" : "login"}
+                                onClick={handleAuthentication}
+                                sx={{ mr: 2 }}
+                            >
+                                {tokenId ? "Logout" : "Login"}
                             </IconButton>
+
 
                         </Toolbar>
                     </AppBar>

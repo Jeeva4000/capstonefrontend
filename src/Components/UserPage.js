@@ -7,7 +7,7 @@ import { useNavigate } from "react-router-dom";
 
 const UserPage = () => {
   const navigate = useNavigate();
-  const [userData, setUserData] = useState([]); 
+  const [userData, setUserData] = useState([]);
   const [error, setError] = useState("");
   const [tokenId, setTokenId] = useState("");
 
@@ -46,7 +46,7 @@ const UserPage = () => {
   return (
     <Base>
       <div>
-        <Button edge="end" color="inherit" aria-label="add cars" onClick={() => navigate(`/add/${tokenId}`)} sx={{ mr: 2 }}>
+        <Button style={{ border: '2px solid black', color: 'white', backgroundColor: 'yellowgreen' }} edge="end" color="inherit" aria-label="add cars" onClick={() => navigate(`/add/${tokenId}`)} sx={{ mr: 2 }}>
           Add Cars
         </Button>
       </div>

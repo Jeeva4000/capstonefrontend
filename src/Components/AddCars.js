@@ -154,6 +154,9 @@ const AddCars = ({ userData, setUserData }) => {
                     />
 
                     <Button
+                        style={{
+                            border: '1px solid black', marginTop: '10px',
+                        }}
                         type="Submit" variant="contained"
                         onClick={postNewCars}
                     >Add cars</Button>

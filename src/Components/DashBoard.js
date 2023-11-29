@@ -13,7 +13,7 @@ const Dashboard = () => {
 
   useEffect(() => {
     if (!localStorage.getItem("token")) {
-      navigate("/", { replace: true });
+      navigate("/login", { replace: true });
     }
     let token = localStorage.getItem("token");
     const fetchAllData = async () => {
@@ -110,7 +110,9 @@ const Dashboard = () => {
               <Typography className="car-details-drivetrain">
                 Drivetrain : {selectedCar.data.drivetrain}
               </Typography>
-              <Button variant="contained" onClick={handleCloseModal} className="car-details-close-button">
+              <Button style={{
+                border: '2px solid black', marginTop: '15px',
+              }} variant="contained" onClick={handleCloseModal} className="car-details-close-button">
                 Close
               </Button>
             </>
