@@ -381,3 +381,8 @@ body {
 .log {
   margin-top: 10px;
 }
+
+
+.demo {
+  border: 1px solid black;
+}
